@@ -59,7 +59,7 @@ function App() {
             <p className='px-4 pt-2' style={{textAlign: 'justify'}}>I’m so happy you have made the decision to begin your journey and become the best version of yourself. I am here to help you and get you started on your healthy journey. Once you click submit, I will review your form and contact you soon.</p>
             </div>
             <hr />
-            <div className='py-2 px-2 card-body container'>
+            <div className='py-2 px-4 card-body container'>
               <p className='h4'>Enter your details</p>
               <form className='pt-2' onSubmit={handleFormSubmitClick}>
                 <label style={{fontWeight: 500}} className='py-3'>Name: <span className='text-danger'>*</span></label>

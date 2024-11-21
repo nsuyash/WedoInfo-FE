@@ -48,8 +48,8 @@ function App() {
   return (
     <>
       <div className='bg-dark py-4'>
-        <div className='container px-4'>
-        <div className='pt-2 px-4 text-center'>
+        <div className='container'>
+        <div className='pt-2 px-2 text-center'>
           <img className='img-fluid' src="https://wedo-landing-usa.s3.amazonaws.com/static/img/wdt-logo/footer-logo-wdt-desktop-en.png" alt="WeDo Transformation Logo" />
         </div>
         <div className='px-3 pt-5'>
@@ -59,7 +59,7 @@ function App() {
             <p className='px-4 pt-2' style={{textAlign: 'justify'}}>I’m so happy you have made the decision to begin your journey and become the best version of yourself. I am here to help you and get you started on your healthy journey. Once you click submit, I will review your form and contact you soon.</p>
             </div>
             <hr />
-            <div className='py-2 px-5 card-body container'>
+            <div className='py-2 px-2 card-body container'>
               <p className='h4'>Enter your details</p>
               <form className='pt-2' onSubmit={handleFormSubmitClick}>
                 <label style={{fontWeight: 500}} className='py-3'>Name: <span className='text-danger'>*</span></label>

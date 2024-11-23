@@ -30,22 +30,35 @@ function App() {
 
   const handleFormSubmitClick = async (event) => {
     event.preventDefault();
-    setFormSaving(true)
-
-    const response = await fetch("https://wedo-info-be.vercel.app/details", {
-      method: "POST",
-      headers: {
-        "Content-Type" : "application/json"
-      },
-      body: JSON.stringify(formData)
-    })
-
-    const data = await response.json()
-    if(data){
-      setFormSaving(false)
-      setFormSave(true)
+  
+    if (formSaving) return;
+  
+    setFormSaving(true);
+    setFormSave(false);
+  
+    try {
+      const response = await fetch("https://wedo-info-be.vercel.app/details", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        setFormSaving(false);
+        setFormSave(true);
+      } else {
+        setFormSaving(false);
+        alert("Failed to save data. Please try again.");
+      }
+    } catch (error) {
+      setFormSaving(false);
+      alert("An error occurred. Please try again.");
     }
-  }
+  };
+  
 
 
 

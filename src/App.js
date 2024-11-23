@@ -19,6 +19,8 @@ function App() {
   })
 
   const [formSave, setFormSave] = useState(false)
+  const [formSaving, setFormSaving] = useState(false)
+
 
   const handleFormDataChange = (event) => {
     const {name, value} = event.target;
@@ -28,6 +30,7 @@ function App() {
 
   const handleFormSubmitClick = async (event) => {
     event.preventDefault();
+    setFormSaving(true)
 
     const response = await fetch("https://wedo-info-be.vercel.app/details", {
       method: "POST",
@@ -39,6 +42,7 @@ function App() {
 
     const data = await response.json()
     if(data){
+      setFormSaving(false)
       setFormSave(true)
     }
   }
@@ -110,6 +114,9 @@ function App() {
                 </div>
                 <label style={{fontWeight: 500}} className='py-3'>if YES, which supplements and when? <span className='text-danger'>*</span></label>
                 <input type="text" required className='form-control' name="ifYesWhich" value={formData.ifYesWhich} onChange={handleFormDataChange} /><br />
+                {
+                  formSaving && <p className='text-success'>Saving...</p>
+                }
                 {
                   formSave && <p className='text-success'>Saved details successfully.</p>
                 }

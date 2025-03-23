@@ -125,7 +125,7 @@ function App() {
                   </select>
                   <p className='pt-2'><small>Choose what suits you the most.</small></p>
                 </div>
-                <label style={{fontWeight: 500}} className='py-3'>if YES, which supplements and when? <span className='text-danger'>*</span></label>
+                <label style={{fontWeight: 500}} className='py-3'>If yes, which supplements and when? (If no, enter 'No') <span className='text-danger'>*</span></label>
                 <input type="text" required className='form-control' name="ifYesWhich" value={formData.ifYesWhich} onChange={handleFormDataChange} /><br />
                 {
                   formSaving && <p className='text-success'>Saving...</p>
